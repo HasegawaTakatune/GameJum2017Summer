@@ -21,11 +21,10 @@ GameObject:
   - component: {fileID: 4378028633086690}
   - component: {fileID: 212531473694885032}
   - component: {fileID: 61203295994287108}
-  - component: {fileID: 114621557407063072}
   - component: {fileID: 114031397265677466}
   m_Layer: 8
   m_Name: Vegetables
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243797778906260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.67, y: 2.88, z: 0}
+  m_LocalPosition: {x: -1.96, y: 5.13, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,27 +78,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bedc248523acc42a92025eaafbe9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yakikagen: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
-  put: 0
---- !u!114 &114621557407063072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1243797778906260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0a241cba3658e43a9830e86ce2eb9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _foodType: 3
   _annealing: 0
-  _point: 0
+  put: 0
+  Bake: 0
+  _point: 500
+  _foodType: 3
   sprite:
   - {fileID: 21300000, guid: e01ceee1fd196e94783e99c3a64fe056, type: 3}
-  - {fileID: 21300000, guid: 4ff51354dcc3aea4eb426156c8bba5b4, type: 3}
   - {fileID: 21300000, guid: 4ce3288915794464789ae95b543329c3, type: 3}
+  - {fileID: 21300000, guid: 4ff51354dcc3aea4eb426156c8bba5b4, type: 3}
+  GrilledMaterial:
+  - {fileID: 21300000, guid: cb5ce758741c4a447ab371a81091fbc8, type: 3}
+  - {fileID: 21300000, guid: ca235e0e4f0847f4a9f06712138a410d, type: 3}
+  - {fileID: 21300000, guid: 2394fb163187cdb45856aa475f5b3c98, type: 3}
+  - {fileID: 21300000, guid: ac4e202cd94ec0f41a916d57b78948ec, type: 3}
+  - {fileID: 21300000, guid: 454e5dfeadcd258469c6c604f5768926, type: 3}
+  - {fileID: 21300000, guid: 6ce7f058f89cfe74c9b3f92104a2c290, type: 3}
 --- !u!212 &212531473694885032
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 4ff51354dcc3aea4eb426156c8bba5b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

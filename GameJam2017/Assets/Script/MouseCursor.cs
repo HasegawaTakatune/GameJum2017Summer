@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseCursor : MonoBehaviour {
+	bool GamePlay = false;
 
 	[SerializeField]
 	RaycastHit2D isMouse;
@@ -18,23 +19,30 @@ public class MouseCursor : MonoBehaviour {
 
 	bool doOnce = false;
 
+	[SerializeField]
+	AudioClip[] audioClip;
+	AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
-
+		audioSource = gameObject.GetComponent<AudioSource> ();
+		StartCoroutine ("GameStart");
 	}
 
 	// Update is called once per frame
 	void Update () {
 		MousePosition ();
 		transform.position = worldPos;
-		if (Input.GetMouseButton (0)) {
-			MouseClick ();
-		}
-		if (Input.GetMouseButtonUp (0) && item != null) {
-			MouseUp ();
-		}
-		if (item != null) {
-			item.transform.position = worldPos + originalPos;
+		if (GamePlay) {
+			if (Input.GetMouseButton (0)) {
+				MouseClick ();
+			}
+			if (Input.GetMouseButtonUp (0) && item != null) {
+				MouseUp ();
+			}
+			if (item != null) {
+				item.transform.position = worldPos + originalPos;
+			}
 		}
 	}
 
@@ -44,26 +52,36 @@ public class MouseCursor : MonoBehaviour {
 			if (isMouse) {
 				item = isMouse.collider.gameObject;
 				yakiniku = item.GetComponent<yakiniku_color> ();
-				if (!doOnce) {
-					if (!yakiniku.put) {
-						Instantiate (item, item.transform.position, Quaternion.identity);
-						yakiniku.put = true;
-					}
-					originalPos = item.transform.position - worldPos;
-					doOnce = true;
+				if (!doOnce && !yakiniku.put) {
+					Instantiate (item, item.transform.position, Quaternion.identity);
+					yakiniku.put = true;
 				}
+				originalPos = item.transform.position - worldPos;
+				doOnce = true;		
+				yakiniku.Bake = false;
 			}
 		}
 	}
 
 	void MouseUp(){
-		isMouse = Physics2D.Raycast (worldPos, Vector3.back, -1, 1 << LayerMask.NameToLayer ("Net"));
-		if (isMouse) {
-		} else {
-			Destroy (item);
+		RaycastHit2D isNet = Physics2D.Raycast (worldPos, Vector3.back, -1, 1 << LayerMask.NameToLayer ("Net"));
+		RaycastHit2D isDish = Physics2D.Raycast (worldPos, Vector3.back, -1, 1 << LayerMask.NameToLayer ("BBQdish"));
+		if (isNet) {
+			StartCoroutine (yakiniku.Yakiniku());
+			yakiniku.Bake = true;
 		}
-		StartCoroutine (item.GetComponent<yakiniku_color> ().Yakiniku());
+		else if(isDish){
+			float annealing = yakiniku.annealing;
+			if (annealing > 20 && annealing <= 90) {
+				GameMaster.score += yakiniku.point;
+			}
+			int i = Random.Range (0, audioClip.Length);
+			audioSource.PlayOneShot (audioClip [i]);
+		} else {
+			
+		}
 		item = null;
+		yakiniku = null;
 		doOnce = false;
 	}
 
@@ -75,6 +93,11 @@ public class MouseCursor : MonoBehaviour {
 		clickPos.z = 10;
 		// ワールド座標に変換
 		worldPos = Camera.main.ScreenToWorldPoint (clickPos);
+	}
+
+	IEnumerator GameStart(){
+		yield return new WaitForSeconds (3f);
+		GamePlay = true;
 	}
 
 }

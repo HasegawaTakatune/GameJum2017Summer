@@ -21,11 +21,10 @@ GameObject:
   - component: {fileID: 4461161877239754}
   - component: {fileID: 212684398565251356}
   - component: {fileID: 61155636582883422}
-  - component: {fileID: 114859410867429414}
   - component: {fileID: 114559621268312060}
   m_Layer: 8
   m_Name: Sausage
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032215821091604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.41, y: 5.26, z: 0}
+  m_LocalPosition: {x: -3.31, y: 5.2, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,24 +78,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bedc248523acc42a92025eaafbe9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yakikagen: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
-  put: 0
---- !u!114 &114859410867429414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032215821091604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0a241cba3658e43a9830e86ce2eb9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _foodType: 2
   _annealing: 0
-  _point: 0
+  put: 0
+  Bake: 0
+  _point: 500
+  _foodType: 2
   sprite: []
+  GrilledMaterial:
+  - {fileID: 21300000, guid: a8cc73d456921004c935f267fe816117, type: 3}
+  - {fileID: 21300000, guid: 3005097163023e043ab74d84102bfd71, type: 3}
 --- !u!212 &212684398565251356
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,7 +118,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7d86172526fca9d4c8bba5e0f98ad1b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

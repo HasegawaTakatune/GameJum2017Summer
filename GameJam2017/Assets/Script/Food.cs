@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class Food : MonoBehaviour {
 	
-    public enum FoodType { Cow , Pig , Sausage , Vegetables }
+    /*public enum FoodType { Cow , Pig , Sausage , Vegetables }
     [SerializeField] FoodType _foodType;
     public FoodType foodType { get { return _foodType; }set { _foodType = value; } }
-
-    [SerializeField]  int _annealing = 0;
-    public int annealing { get { return _annealing; }set { _annealing = value; } }
 
     [SerializeField]  int _point = 0;
     public int point { get { return _point; } set { _point = value; } }
@@ -26,5 +23,5 @@ public class Food : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	}
+	}*/
 }

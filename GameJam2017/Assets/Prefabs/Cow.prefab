@@ -21,11 +21,10 @@ GameObject:
   - component: {fileID: 4287487036439268}
   - component: {fileID: 212969434872049388}
   - component: {fileID: 61837281085122636}
-  - component: {fileID: 114008090819327244}
   - component: {fileID: 114142104689847096}
   m_Layer: 8
   m_Name: Cow
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733599785404676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.75, y: 2.91, z: 0}
+  m_LocalPosition: {x: -4.82, y: 5.17, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,21 +67,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43396175, y: 0.5983389}
   m_EdgeRadius: 0
---- !u!114 &114008090819327244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1733599785404676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0a241cba3658e43a9830e86ce2eb9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _foodType: 0
-  _annealing: 0
-  _point: 0
-  sprite: []
 --- !u!114 &114142104689847096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,9 +78,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bedc248523acc42a92025eaafbe9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yakikagen: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
+  _annealing: 0
   put: 0
+  Bake: 0
+  _point: 500
+  _foodType: 0
+  sprite: []
+  GrilledMaterial:
+  - {fileID: 21300000, guid: 7841934c66bac414f81c3f19cfbdf707, type: 3}
+  - {fileID: 21300000, guid: 5240426d2031db34782f1ada4eb3a598, type: 3}
 --- !u!212 &212969434872049388
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,7 +118,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: cd049656b239b2f4a82e13326b96febb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
