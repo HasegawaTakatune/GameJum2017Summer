@@ -7,7 +7,6 @@ public class ScoreText : MonoBehaviour {
 
 	Text scoreText;
 
-	// Use this for initialization
 	void Start () {
 		GameMaster.score = 0;
 		scoreText = gameObject.GetComponent<Text> ();
@@ -19,10 +18,5 @@ public class ScoreText : MonoBehaviour {
 			scoreText.text = GameMaster.score + "円";
 			yield return new WaitForSeconds (0.5f);
 		}
-	}
-
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

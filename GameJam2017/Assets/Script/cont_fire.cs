@@ -13,7 +13,6 @@ public class cont_fire : MonoBehaviour {
     int[] ondo_flg = {20, 30, 40, 50, 60, 70, 80, 90};
     //xとy座標
      public float[] x;
-    //private float[] y = { -2.5f, -4, -5.5f, -4, -2.5f, -1, 0.5f, 1.5f};
 
     // Use this for initialization
     void Start () {
@@ -26,9 +25,6 @@ public class cont_fire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-       
-
         for(int i = 0; i < 8; i++)
         {
             //温度が基準以上になったら火をだす
@@ -40,7 +36,6 @@ public class cont_fire : MonoBehaviour {
             //基準以下で消す
             else if (shuuzou.ondo <= ondo_flg[i] && fire_flg[i] == true)
             {
-                //Destroy(fire_obj[i]);
                 fire_obj[i].transform.position = new Vector3(50, fire_obj[i].transform.position.y, 0);
                 fire_flg[i] = false;
             }   

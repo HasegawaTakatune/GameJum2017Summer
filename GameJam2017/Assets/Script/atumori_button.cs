@@ -15,8 +15,6 @@ public class atumori_button : MonoBehaviour {
 
   public void button_push(){
 		Shuuzou.shuuzou_red ();
-		//if (!audioSource.isPlaying) {
 			audioSource.PlayOneShot(audioSource.clip);
-		//}
     }
 }

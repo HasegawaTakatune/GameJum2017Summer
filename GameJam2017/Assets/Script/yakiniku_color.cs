@@ -37,8 +37,7 @@ public class yakiniku_color : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//spriteRenderer.color = color;
-        //修造の温度取得 
+		//修造の温度取得 
 		yakiniku_ondo = shuuzou.ondo;
     }
 

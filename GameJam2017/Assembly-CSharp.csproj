@@ -47,28 +47,19 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Dish.cs" />
-     <Compile Include="Assets\Script\Food.cs" />
      <Compile Include="Assets\Script\GameMaster.cs" />
      <Compile Include="Assets\Script\MouseCursor.cs" />
-     <Compile Include="Assets\Script\Score.cs" />
+     <Compile Include="Assets\Script\Result.cs" />
+     <Compile Include="Assets\Script\SceneButton.cs" />
      <Compile Include="Assets\Script\ScoreText.cs" />
      <Compile Include="Assets\Script\SyuzoSE.cs" />
      <Compile Include="Assets\Script\TimeSC.cs" />
-     <Compile Include="Assets\Script\TotalScore.cs" />
      <Compile Include="Assets\Script\atumori_button.cs" />
      <Compile Include="Assets\Script\cont_fire.cs" />
      <Compile Include="Assets\Script\countdown.cs" />
-     <Compile Include="Assets\Script\sResult.cs" />
-     <Compile Include="Assets\Script\sTitle.cs" />
+     <Compile Include="Assets\Script\order.cs" />
      <Compile Include="Assets\Script\shuuzou.cs" />
-     <Compile Include="Assets\Script\tmp\countbutton.cs" />
-     <Compile Include="Assets\Script\tmp\data.cs" />
-     <Compile Include="Assets\Script\tmp\koori_button.cs" />
-     <Compile Include="Assets\Script\tmp\scenejump.cs" />
-     <Compile Include="Assets\Script\tmp\tenbutton.cs" />
-     <Compile Include="Assets\Script\toTitle.cs" />
      <Compile Include="Assets\Script\yakiniku_color.cs" />
-     <Compile Include="Assets\order.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

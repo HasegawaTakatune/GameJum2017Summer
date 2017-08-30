@@ -7,17 +7,11 @@ public class Dish : MonoBehaviour {
 	[SerializeField]List<GameObject> list = new List<GameObject>();
 
 	Vector3 movement = new Vector3 (.3f, 0, 0);
-	bool Escape = false;
 	public enum MoveType
 	{
 		Stop,Escape,Return
 	}
 	MoveType moveType = MoveType.Stop;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {		
